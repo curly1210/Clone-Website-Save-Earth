@@ -240,8 +240,10 @@ header .fa-bars {
 /* service */
 .service {
   background: #f0f0f0;
-  padding-bottom: 6rem;
-  /* min-height: 100vh; */
+  /* padding-bottom: 6rem; */
+  min-height: 100vh;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
 }
 
 .service .box-container {
@@ -301,6 +303,9 @@ header .fa-bars {
 /* project section */
 .project {
   background: #333;
+  min-height: 100vh;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
 }
 
 .project .heading {
@@ -357,6 +362,84 @@ header .fa-bars {
 
 .project .box-container .box:hover .icons a {
   transform: translateY(0rem);
+}
+
+/* donate us */
+.donate {
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+  padding-bottom: 3rem;
+}
+
+.donate .heading {
+  color: #fff;
+}
+
+.donate .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.donate .form-container form {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.4rem);
+  box-shadow: 0 0.3rem 0.5rem #000;
+  text-align: center;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.3);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.donate .form-container form .inputBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.donate .form-container form .inputBox input,
+select {
+  height: 4rem;
+  width: 49%;
+  background: #fff;
+  color: #333;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  outline: none;
+  border: none;
+}
+
+.donate .form-container form textarea {
+  height: 20rem;
+  width: 100%;
+  background: #fff;
+  color: #333;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.donate .form-container form input[type="submit"] {
+  color: #fff;
+  border-color: #fff;
+  transition: all 0.15s;
+}
+
+.donate .form-container form input[type="submit"]:hover {
+  color: var(--green);
+  border-color: var(--green);
+  background: #fff;
 }
 
 /* media query */
@@ -421,13 +504,25 @@ header .fa-bars {
     text-align: center;
   }
 
-  .service .box-container {
+  .service .box-container,
+  .project .box-container {
     width: auto;
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (max-width: 30rem) {
-  .service .box-container {
+  .service .box-container,
+  .project .box-container {
     grid-template-columns: 1fr;
+  }
+
+  .donate .form-container form .inputBox input,
+  select {
+    width: 100%;
+  }
+
+  .donate .form-container form {
+    width: 90%;
   }
 }
